@@ -1,0 +1,1 @@
+ self.m, self.s, self.t = 0, 0, 0
