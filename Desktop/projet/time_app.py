@@ -14,23 +14,7 @@ from PyQt5.QtCore import QTimer
 import sys
 
 class Ui_Form(object):
-    class Chrono(QWidget):
-        def __init__(self):
-            self.m, self.s, self.t = 0, 0, 0
-            def tick():
-            
-                self.t +=1
-                if self.t == 100:
-                    self.t =0
-                    self.s += 1
-                if self.s == 60:
-                    self.s = 0
-                    self.m += 1
-                self.ui.compteur.display(f"{self.m:02}:{self.s:02}:{self.t:02}")
 
-            self.timer = QTimer(self)
-            self.timer.timeout.connect(tick)
-            self.timer.start(10)
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(777, 864)

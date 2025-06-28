@@ -9,10 +9,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from app import Chrono
 
 
 class Ui_Form(object):
     def setupUi(self, Form):
+        self.chrono=Chrono()
         Form.setObjectName("Form")
         Form.resize(777, 864)
         Form.setStyleSheet("background-color: rgb(7, 231, 255);")
@@ -49,7 +51,7 @@ class Ui_Form(object):
         item = QtWidgets.QTableWidgetItem()
         self.liste.setHorizontalHeaderItem(2, item)
         self.label_2 = QtWidgets.QLabel(Form)
-        self.label_2.setGeometry(QtCore.QRect(130, 120, 161, 41))
+        self.label_2.setGeometry(QtCore.QRect(140, 130, 171, 51))
         self.label_2.setObjectName("label_2")
         self.line = QtWidgets.QFrame(Form)
         self.line.setGeometry(QtCore.QRect(440, 130, 20, 701))
@@ -61,6 +63,7 @@ class Ui_Form(object):
         self.pushButton_tour.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.pushButton_tour.setObjectName("pushButton_tour")
         self.pushButton_demarer = QtWidgets.QPushButton(Form)
+        self.pushButton_demarer.clicked.connect(self.chrono.debut)
         self.pushButton_demarer.setGeometry(QtCore.QRect(640, 300, 93, 28))
         self.pushButton_demarer.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.pushButton_demarer.setObjectName("pushButton_demarer")
